@@ -58,3 +58,28 @@
         <div id="output" class="mt-4"></div>
         <div class="copy-container">
             <button class="copy-button" onclick="copyCode">Copy Code</button>
+            <pre>
+                <code>
+                    // Your code block here
+                    function examplePattern() {
+                        // Code for the programming pattern
+                    }
+                </code>
+            </pre>
+        </div>
+    </div>
+    <script>
+        function copyCode() {
+            const codeBlock = document.querySelector('pre code');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeBlock.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Code has been copied to the clipboard');
+        }
+    </script>
+</body>
+
+</html>
